@@ -10,7 +10,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 import org.slf4j.LoggerFactory
 import utils.SparkUtils
 
-object GetUserInfo {
+object UserProcessing {
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf()
       .setAppName(Constants.SPARK_APP_NAME_USER)
