@@ -37,7 +37,7 @@ object GetUserInfo {
 
       if (args(0).split('.')(0).equals("qfbap_dm")) {
         // 获取配置信息
-        val mysqlTableName = args(0).split(".")(1)
+        val mysqlTableName = args(0).split('.')(1)
         val hiveTableName = args(0)
         val jdbcProp = getJdbcProp._1
         val jdbcUrl = getJdbcProp._2
