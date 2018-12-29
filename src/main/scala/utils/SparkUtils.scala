@@ -1,6 +1,6 @@
 package utils
 
-import conf.SQLManager
+import conf.ConfigManager
 import constant.Constants
 import org.apache.spark.SparkConf
 
@@ -10,7 +10,7 @@ object SparkUtils {
     * @param conf
     */
   def setMaster(conf: SparkConf): Unit = {
-    val local = SQLManager.getBoolean(Constants.SPARK_LOCAL)
+    val local = ConfigManager.getBoolean(Constants.SPARK_LOCAL)
     if (local) conf.setMaster("local")
   }
 

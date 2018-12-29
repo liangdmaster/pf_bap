@@ -6,13 +6,21 @@ import java.util.Properties
   * SQL管理组件
   * 提供key对应的SQL语句
   */
-object SQLManager {
+object ConfigManager {
   private val prop = new Properties()
 
   try {
     // 通过调用类加载器（ClassLoader）的getResourceAsStream方法获取指定文件的输入流
-    val in = SQLManager.getClass.getClassLoader.getResourceAsStream("sql.properties")
-    prop.load(in)
+    val in_basic = ConfigManager.getClass.getClassLoader.getResourceAsStream("basic.properties")
+    val in_ods_dwd = ConfigManager.getClass.getClassLoader.getResourceAsStream("ods_dwd.properties")
+    val in_dwd_dws = ConfigManager.getClass.getClassLoader.getResourceAsStream("dwd_dws.properties")
+    val in_dwd_dm = ConfigManager.getClass.getClassLoader.getResourceAsStream("dwd_dm.properties")
+
+    prop.load(in_basic)
+    prop.load(in_ods_dwd)
+    prop.load(in_dwd_dws)
+    prop.load(in_dwd_dm)
+
   } catch {
     case e: Exception => e.printStackTrace()
   }
